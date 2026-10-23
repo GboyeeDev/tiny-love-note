@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff6f0" />
+    <meta
+      name="description"
+      content="A tiny, playful love-note experience made for someone special."
+    />
+    <title>A tiny question for you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <main>
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <div class="floating-heart heart-one" aria-hidden="true">♥</div>
+        <div class="floating-heart heart-two" aria-hidden="true">♥</div>
+        <div class="envelope-wrap" aria-hidden="true">
+          <div class="envelope">
+            <div class="letter"><span>for you</span><b>♥</b></div>
+            <div class="envelope-back"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+          </div>
+        </div>
+        <p class="eyebrow">SPECIAL DELIVERY</p>
+        <h1 id="intro-title">I made you<br /><em>a tiny thing.</em></h1>
+        <p class="intro-copy">It contains one very important question.</p>
+        <button class="primary-button" id="open-letter" type="button">
+          Open my note <span aria-hidden="true">→</span>
+        </button>
+      </section>
+
+      <section class="question-scene" id="question-scene" aria-labelledby="question-title" hidden>
+        <div class="topbar">
+          <span class="tiny-brand">a tiny love note</span>
+          <button class="sound-button" id="motion-toggle" type="button" aria-pressed="false">
+            <span aria-hidden="true">✦</span> motion on
+          </button>
+        </div>
+
+        <div class="question-card">
+          <div class="stamp" aria-hidden="true">WITH<br />LOVE</div>
+          <p class="eyebrow" id="recipient-line">DEAR MY FAVORITE PERSON,</p>
+          <h2 id="question-title">Do you love me?</h2>
+          <p class="subcopy" id="tease-text">Choose wisely. My heart is watching.</p>
+
+          <div class="button-arena" id="button-arena">
+            <button class="yes-button" id="yes-button" type="button">
+              Yes, obviously <span aria-hidden="true">♥</span>
+            </button>
+            <button class="no-button" id="no-button" type="button">No</button>
+          </div>
+
+          <div class="resistance" id="resistance" aria-live="polite">
+            <span>Resistance level</span>
+            <div class="resistance-track" aria-hidden="true">
+              <i id="resistance-fill"></i>
+            </div>
+            <b id="resistance-value">0%</b>
+          </div>
+        </div>
+
+        <button class="edit-button" id="edit-button" type="button">✎ personalize this note</button>
+      </section>
+
+      <section class="celebration" id="celebration" aria-labelledby="celebration-title" hidden>
+        <div class="big-heart" aria-hidden="true">♥</div>
+        <p class="eyebrow">BEST ANSWER EVER</p>
+        <h2 id="celebration-title">I knew it!</h2>
+        <p id="celebration-copy">You just made me the happiest person alive.</p>
+        <div class="love-ticket">
+          <span>OFFICIAL LOVE RECEIPT</span>
+          <strong>ONE FOREVER<br />WITH YOU</strong>
+          <small>NON-REFUNDABLE · UNLIMITED HUGS</small>
+        </div>
+        <button class="secondary-button" id="replay-button" type="button">Replay the magic ↻</button>
+      </section>
+    </main>
+
+    <dialog id="customize-dialog">
+      <form method="dialog" id="customize-form">
+        <button class="dialog-close" value="cancel" aria-label="Close" type="submit">×</button>
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2>Personalize the note</h2>
+        <label>
+          Her name
+          <input id="name-input" name="name" maxlength="30" placeholder="e.g. Amara" />
+        </label>
+        <label>
+          The big question
+          <select id="question-input" name="question">
+            <option>Do you love me?</option>
+            <option>Will you be my girlfriend?</option>
+            <option>Will you marry me?</option>
+            <option>Will you be my Valentine?</option>
+          </select>
+        </label>
+        <label>
+          Your happy message
+          <input
+            id="message-input"
+            name="message"
+            maxlength="80"
+            value="You just made me the happiest person alive."
+          />
+        </label>
+        <button class="primary-button save-button" value="save" type="submit">Save my note ♥</button>
+      </form>
+    </dialog>
+
+    <div class="sr-only" id="live-region" aria-live="assertive"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
